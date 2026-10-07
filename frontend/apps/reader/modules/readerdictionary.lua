@@ -1589,10 +1589,7 @@ function ReaderDictionary:showNoResultsDialog(word, dict_names, fuzzy_search, bo
                 if new_word == "" then return end
                 UIManager:close(dialog)
                 -- Re-run the lookup with the (possibly edited) word and fuzzy enabled.
-                -- Wrapped through Trapper, as we may be using Trapper:dismissablePopen() in it
-                Trapper:wrap(function()
-                    self:stardictLookup(new_word, dict_names, true, boxes, link, dict_close_callback)
-                end)
+                 self:stardictLookup(new_word, dict_names, true, boxes, link, dict_close_callback)
             end,
         }
     elseif has_presets then

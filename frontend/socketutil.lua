@@ -51,7 +51,7 @@ socketutil.DEFAULT_TOTAL_TIMEOUT = -1
 -- so name resolution delays will fall outside of these timeouts.
 function socketutil:set_timeout(block_timeout, total_timeout)
     self.block_timeout = block_timeout or 5
-    self.total_timeout = total_timeout or 15
+    self.total_timeout = total_timeout or 180
 
     -- Also update the actual LuaSocket & LuaSec constants, because:
     -- 1. LuaSocket's `open` does a `settimeout` *after* create with this constant
